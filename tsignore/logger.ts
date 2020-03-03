@@ -1,5 +1,5 @@
 import fn2 from "./fn2"
-import tinyId from "./tiny-id"
+import tinyId from "./tinyId"
 
 export class Logger {
   fn2: typeof fn2 = null
