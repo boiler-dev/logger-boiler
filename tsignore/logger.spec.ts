@@ -9,9 +9,11 @@ const { fn2 } = loaded.load({
   tinyId,
 }) as { fn2: Fn2 }
 
-it("logs", () => {
-  fn2.run({
-    hi: () => {},
-    world: () => {},
+describe("logger", () => {
+  it("logs", () => {
+    fn2.run({
+      hi: () => {},
+      world: () => {},
+    })
   })
 })
