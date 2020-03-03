@@ -1,7 +1,6 @@
-import loaded, { Fn2 } from "./loaded"
-import patch from "./patch"
-import tinyId from "./tiny-id"
-
+import loaded, { Fn2 } from "../src/loaded"
+import patch from "../src/patch"
+import tinyId from "../src/tinyId"
 import logger from "../src/logger"
 
 const { fn2 } = loaded.load({
