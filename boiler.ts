@@ -1,31 +1,19 @@
-import { join } from "path"
-import { GenerateBoiler } from "boiler-dev"
+import { ActionBoiler } from "boiler-dev"
 
-export const generate: GenerateBoiler = async ({
-  cwdPath,
-  files,
-}) => {
+export const generate: ActionBoiler = async () => {
   const actions = []
 
-  for (const file of files) {
-    const { name, source } = file
+  actions.push({
+    action: "write",
+    path: "src/logger.ts",
+    sourcePath: "tsignore/logger.ts",
+  })
 
-    if (name === "logger.ts") {
-      actions.push({
-        action: "write",
-        path: join(cwdPath, "src", name),
-        source,
-      })
-    }
-
-    if (name === "logger.spec.ts") {
-      actions.push({
-        action: "write",
-        path: join(cwdPath, "test", name),
-        source,
-      })
-    }
-  }
+  actions.push({
+    action: "write",
+    path: "test/logger.spec.ts",
+    sourcePath: "tsignore/logger.spec.ts",
+  })
 
   return actions
 }
